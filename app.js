@@ -1,7 +1,11 @@
+var hours = ['8:00 a.m.', '9:00 a.m.', '10:00 a.m.', '11:00 a.m.','12:00 p.m.', 
+    '1:00 p.m.', '2:00 p.m.','3:00 p.m.', '4:00 p.m.', '5:00 p.m.', '6:00 p.m.']
+
 var pdxAirport = {
     min: 23,
     max: 65,
     avgCookie: 6.3,
+    cookiesPerHourArray: [],
 
     custPerHour: function(){
       return Math.floor(Math.random() * (this.max - this.min + 1)) + this.min;
@@ -10,7 +14,23 @@ var pdxAirport = {
     cookiesPerHour: function(){
        return Math.floor(this.custPerHour() * this.avgCookie);
     },
-
+    
+    calcCookiesPerHour: function(){
+        for(i = 0; i < 15; i++ ){
+            this.cookiesPerHourArray.push(this.cookiesPerHour());
+        }
+        return this.cookiesPerHourArray
+    },
+    
+    addToDom: function(){
+        this.calcCookiesPerHour()
+        for( i = 0; i < 15; i++ ) {
+    var list = document.getElementById('pdxcookie')
+    var newList = document.createElement('li');
+    newList.innerHTML = (hours[i] + ': ' + this.cookiesPerHourArray[i] )
+    list.appendChild(newList);
+    }
+    },
 
     };
 
@@ -72,6 +92,19 @@ var waterfront = {
     cookiesPerHour: function(){
        return Math.floor(this.custPerHour() * this.avgCookie);
     },
+    
     };
 
-    console.log(pdxAirport.cookiesAnHour());
+    
+    function addToDom(){
+        this.calcCookiesPerHour()
+        for( i = 0; i < 15; i++ ) {
+    var list = document.getElementById('pdxcookie')
+    var newList = document.createElement('li');
+    newList.innerHTML = (hours[i] + ': ' + this.cookiesPerHourArray[i] )
+    list.appendChild(newList);
+    }
+    }
+
+    pdxAirport.addToDom();
+    console.log(pdxAirport.calcCookiesPerHour());
