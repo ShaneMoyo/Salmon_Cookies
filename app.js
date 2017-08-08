@@ -5,7 +5,11 @@ var pdxAirport = {
 
     custPerHour: function(){
       return Math.floor(Math.random() * (this.max - this.min + 1)) + this.min;
-       
+    },
+
+    cookiesPerHour: function(){
+       return Math.floor(this.custPerHour() * this.avgCookie);
+
     },
     };
 
@@ -18,6 +22,11 @@ var pioneerSquare = {
     custPerHour: function(){
        return Math.floor(Math.random() * (this.max - this.min + 1)) + this.min;
     },
+
+    cookiesPerHour: function(){
+       return Math.floor(this.custPerHour() * this.avgCookie);
+    },
+
     };
 
 var powells = {
@@ -27,6 +36,10 @@ var powells = {
 
     custPerHour: function(){
        return Math.floor(Math.random() * (this.max - this.min + 1)) + this.min;
+    },
+
+    cookiesPerHour: function(){
+       return Math.floor(this.custPerHour() * this.avgCookie);
     },
     };
 
@@ -38,6 +51,10 @@ var stJohns = {
     custPerHour: function(){
        return Math.floor(Math.random() * (this.max - this.min + 1)) + this.min;
     },
+
+    cookiesPerHour: function(){
+       return Math.floor(this.custPerHour() * this.avgCookie);
+    },
     };
 
 var waterfront = {
@@ -48,6 +65,10 @@ var waterfront = {
     custPerHour: function(){
        return Math.floor(Math.random() * (this.max - this.min + 1)) + this.min;
     },
+
+    cookiesPerHour: function(){
+       return Math.floor(this.custPerHour() * this.avgCookie);
+    },
     };
 
-    console.log(pdxAirport.custPerHour());
+    console.log(pdxAirport.cookiesPerHour());
