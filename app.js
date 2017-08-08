@@ -9,8 +9,9 @@ var pdxAirport = {
 
     cookiesPerHour: function(){
        return Math.floor(this.custPerHour() * this.avgCookie);
-
     },
+
+
     };
 
 
@@ -18,6 +19,7 @@ var pioneerSquare = {
     minCutomers: 3,
     maxCustomers: 24,
     avgCookie: 1.2,
+    cookiesByHour: [],
 
     custPerHour: function(){
        return Math.floor(Math.random() * (this.max - this.min + 1)) + this.min;
@@ -26,6 +28,7 @@ var pioneerSquare = {
     cookiesPerHour: function(){
        return Math.floor(this.custPerHour() * this.avgCookie);
     },
+    
 
     };
 
@@ -71,4 +74,4 @@ var waterfront = {
     },
     };
 
-    console.log(pdxAirport.cookiesPerHour());
+    console.log(pdxAirport.cookiesAnHour());
