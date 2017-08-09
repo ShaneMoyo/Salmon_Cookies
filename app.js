@@ -6,7 +6,8 @@ var pdxAirport = {
     max: 65,
     avgCookie: 6.3,
     cookiesPerHourArray: [],
-
+    staffPerHour:[],
+    
     custPerHour: function(){
       return Math.floor(Math.random() * (this.max - this.min + 1)) + this.min;
     },
@@ -63,6 +64,11 @@ var pdxAirport = {
         }
         return this.cookiesPerHourArray
     },
+
+    staff: function(){
+        var staffNeeded = (this.custPerHour() / 20);
+        return staffNeeded
+    }
     
     addToDom: function(){
         this.calcCookiesPerHour()
