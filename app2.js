@@ -19,7 +19,6 @@ Store.prototype.customersPerHour = function(){
     var staffNeed = Math.ceil(customers / 20)
     if(staffNeed < 2) {staffNeed = staffNeed +1} //every store must have atleast 2 employees per hour as per instructions 
     this.staff.push(staffNeed);
-    console.log(this.staff);
     return customers
 }
 
@@ -34,7 +33,7 @@ Store.prototype.calcCookiesByHour = function(){
         return this.cookieSalesArr
 }
 
-Store.prototype.addToDom = function(){
+Store.prototype.addToDom = function(){//cookie data table
     var row = document.getElementById('stores');
     var newRow = document.createElement('tr');
     newRow.setAttribute('id', this.listID);
@@ -59,7 +58,7 @@ Store.prototype.addToDom = function(){
      newList.innerHTML = ( total );
      list.appendChild(newList);
 
-     //staff table
+     //Staff table
 
      var row = document.getElementById('stores2');
     var newRow = document.createElement('tr');
