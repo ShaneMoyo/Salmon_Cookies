@@ -8,6 +8,7 @@ var Store = function(name, min, max, avgCookie, listID,) {
     this.listID = listID;
     this.hours = ['6:00 a.m.', '7:00 a.m.', '8:00 a.m.', '9:00 a.m.', '10:00 a.m.', '11:00 a.m.','12:00 p.m.', 
     '1:00 p.m.', '2:00 p.m.','3:00 p.m.', '4:00 p.m.', '5:00 p.m.', '6:00 p.m.', '7:00 p.m.' , '8:00 p.m.'];
+    this.addToDom();
 }
 
 
@@ -58,7 +59,7 @@ Store.prototype.addToDom = function(){
      newList.innerHTML = ( total );
      list.appendChild(newList);
 
-     //staff
+     //staff table
 
      var row = document.getElementById('stores2');
     var newRow = document.createElement('tr');
@@ -92,10 +93,5 @@ var powells = new Store ('Powells', 11, 38, 3.7, 'powellscookie');
 var stJohns = new Store ('St. Johns', 20, 38, 2.3, 'stJohnscookie');
 var waterFront = new Store ('Waterfront', 2, 16, 4.6, 'waterfrontcookie');   
 
-pdxAirport.addToDom();
-pioneerSquare.addToDom();
-powells.addToDom();
-stJohns.addToDom();
-waterFront.addToDom();
 
 

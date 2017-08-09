@@ -1,12 +1,25 @@
 table, th, td {
-   border: 1px solid black;
-   border-spacing: 0.3rem;
+   border-spacing: 0.2rem;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   
+   
 }
 
+img {
+    
+    margin:10px 100px 10px 250px
+}
 table {
-    background-color: tan;
+    border: 3px solid grey;
+    background-color: lightblue;
+    margin: 10px;
+    border-radius: 10px;
 }
 
 th, td {
     background-color: white;
+    border: 1px solid white;
+}
+body{
+    background-color: tan;
 }
