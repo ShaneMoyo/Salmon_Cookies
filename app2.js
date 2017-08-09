@@ -11,9 +11,6 @@ var Store = function(name, min, max, avgCookie, listID,) {
     this.addToDom();
 }
 
-
-
-
 Store.prototype.customersPerHour = function(){
     var customers = Math.floor(Math.random() * (this.max - this.min + 1)) + this.min;
     var staffNeed = Math.ceil(customers / 20)
