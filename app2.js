@@ -15,7 +15,9 @@ var Store = function(name, min, max, avgCookie, listID,) {
 
 Store.prototype.customersPerHour = function(){
     var customers = Math.floor(Math.random() * (this.max - this.min + 1)) + this.min;
-    this.staff.push(Math.ceil(customers / 20));
+    var staffNeed = Math.ceil(customers / 20)
+    if(staffNeed < 2) {staffNeed = staffNeed +1} //every store must have atleast 2 employees per hour as per instructions 
+    this.staff.push(staffNeed);
     console.log(this.staff);
     return customers
 }
