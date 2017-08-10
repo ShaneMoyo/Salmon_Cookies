@@ -1,3 +1,11 @@
+//test totals function
+var hoursOpen = ['6:00 a.m.', '7:00 a.m.', '8:00 a.m.', '9:00 a.m.', '10:00 a.m.', '11:00 a.m.','12:00 p.m.', 
+    '1:00 p.m.', '2:00 p.m.','3:00 p.m.', '4:00 p.m.', '5:00 p.m.', '6:00 p.m.', '7:00 p.m.' , '8:00 p.m.'];
+var salesByHour = [];
+var storz = [];
+var sumOfAllTotals = 0;
+//end of test variables
+
 var Store = function(name, min, max, avgCookie, listID,) {
     this.name = name
     this.min = min;
@@ -11,6 +19,9 @@ var Store = function(name, min, max, avgCookie, listID,) {
     this.addToDom();
 }
 
+
+
+var sumTotal = 0;
 Store.prototype.customersPerHour = function(){
     var customers = Math.floor(Math.random() * (this.max - this.min + 1)) + this.min;
     var staffNeed = Math.ceil(customers / 20)
@@ -45,10 +56,13 @@ Store.prototype.addToDom = function(){//cookie data table
     newList.innerHTML = (this.cookieSalesArr[i] )
     list.appendChild(newList);
     }
+    console.log(this.cookieSalesArr)
+    
     var total = 0;
     for( i = 0; i < 15; i++ ) {
         total = total + this.cookieSalesArr[i];
     }
+    sumOfAllTotals += total;
 
      var list = document.getElementById(this.listID)
      var newList = document.createElement('td');
@@ -75,12 +89,44 @@ Store.prototype.addToDom = function(){//cookie data table
         total = total + this.staff[i];
     }
 
+
+
      var list = document.getElementById(this.avgCookie);
      var newList = document.createElement('td');
      newList.innerHTML = ( total );
      list.appendChild(newList);
 }
 
+ function totalTotal(){ //Creates and populates total row 
+     
+     
+        for (var j = 0; j < 15; j++ ){
+            var count = 0;
+            for(var i = 0; i < storz.length; i++ ){
+
+                count += storz[i].cookieSalesArr[j];
+                
+            }
+            salesByHour.push(count);
+        
+        }
+         var row = document.getElementById('stores');
+         var newRow = document.createElement('tr');
+         newRow.setAttribute('id', 'total');
+         newRow.innerText = 'total'
+         row.appendChild(newRow);
+         for( i = 0; i < 15; i++ ) {
+         var list = document.getElementById('total')
+         var newList = document.createElement('td');
+         newList.innerHTML = (salesByHour[i])
+         list.appendChild(newList);
+    }
+        var list = document.getElementById('total')
+         var newList = document.createElement('td');
+         newList.innerHTML = (sumOfAllTotals)
+         list.appendChild(newList);
+        
+    }
     
 
 var pdxAirport = new Store('PDX Airport', 23, 65, 6.3, 'pdxcookie');
@@ -90,4 +136,7 @@ var stJohns = new Store ('St. Johns', 20, 38, 2.3, 'stJohnscookie');
 var waterFront = new Store ('Waterfront', 2, 16, 4.6, 'waterfrontcookie');   
 
 
+storz = [pdxAirport, pioneerSquare, powells, stJohns, waterFront];
+
+totalTotal();
 
