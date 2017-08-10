@@ -5,6 +5,7 @@ var salesByHour = [];
 var storz = [];
 var sumOfAllTotals = 0;
 
+
 //Constructor function
 var Store = function(name, min, max, avgCookie, listID,) {
     this.name = name
@@ -15,8 +16,11 @@ var Store = function(name, min, max, avgCookie, listID,) {
     this.staff = [];
     this.listID = listID;
     this.addToDom();
+    this.pushArr();
 };
-
+Store.prototype.pushArr = function(){
+    storz.push(this);
+}
 Store.prototype.customersPerHour = function(){//Calculates random number of customers between min and max
     var customers = Math.floor(Math.random() * (this.max - this.min + 1)) + this.min;
     var staffNeed = Math.ceil(customers / 20)
@@ -123,7 +127,8 @@ var stJohns = new Store ('St. Johns', 20, 38, 2.3, 'stJohnscookie');
 var waterFront = new Store ('Waterfront', 2, 16, 4.6, 'waterfrontcookie');   
 
 
-storz = [pdxAirport, pioneerSquare, powells, stJohns, waterFront];
+
+
 
 totalTotal();
-
+console.log(storz);
