@@ -1,11 +1,11 @@
-//test totals function
+//Global variables 
 var hoursOpen = ['6:00 a.m.', '7:00 a.m.', '8:00 a.m.', '9:00 a.m.', '10:00 a.m.', '11:00 a.m.','12:00 p.m.', 
     '1:00 p.m.', '2:00 p.m.','3:00 p.m.', '4:00 p.m.', '5:00 p.m.', '6:00 p.m.', '7:00 p.m.' , '8:00 p.m.'];
 var salesByHour = [];
 var storz = [];
 var sumOfAllTotals = 0;
-//end of test variables
 
+//Constructor function
 var Store = function(name, min, max, avgCookie, listID,) {
     this.name = name
     this.min = min;
@@ -14,34 +14,29 @@ var Store = function(name, min, max, avgCookie, listID,) {
     this.cookieSalesArr = [];
     this.staff = [];
     this.listID = listID;
-    this.hours = ['6:00 a.m.', '7:00 a.m.', '8:00 a.m.', '9:00 a.m.', '10:00 a.m.', '11:00 a.m.','12:00 p.m.', 
-    '1:00 p.m.', '2:00 p.m.','3:00 p.m.', '4:00 p.m.', '5:00 p.m.', '6:00 p.m.', '7:00 p.m.' , '8:00 p.m.'];
     this.addToDom();
-}
+};
 
-
-
-var sumTotal = 0;
-Store.prototype.customersPerHour = function(){
+Store.prototype.customersPerHour = function(){//Calculates random number of customers between min and max
     var customers = Math.floor(Math.random() * (this.max - this.min + 1)) + this.min;
     var staffNeed = Math.ceil(customers / 20)
-    if(staffNeed < 2) {staffNeed = staffNeed +1} //every store must have atleast 2 employees per hour as per instructions 
+    if(staffNeed < 2) {staffNeed = staffNeed +1}//every store must have atleast 2 employees per hour as per instructions 
     this.staff.push(staffNeed);
     return customers
 }
 
-Store.prototype.cookiesPerHour = function(){
+Store.prototype.cookiesPerHour = function(){//Calculates cookies sold per hour 
     return Math.floor(this.customersPerHour() * this.avgCookie);
 }
 
-Store.prototype.calcCookiesByHour = function(){
+Store.prototype.calcCookiesByHour = function(){//Calculates cookiesPerHour function 15 times and adds reslut to array
     for(i = 0; i < 15; i++ ){
             this.cookieSalesArr.push(this.cookiesPerHour());
         }
         return this.cookieSalesArr
 }
 
-Store.prototype.addToDom = function(){//cookie data table
+Store.prototype.addToDom = function(){//Creates cookie data table
     var row = document.getElementById('stores');
     var newRow = document.createElement('tr');
     newRow.setAttribute('id', this.listID);
@@ -56,65 +51,57 @@ Store.prototype.addToDom = function(){//cookie data table
     newList.innerHTML = (this.cookieSalesArr[i] )
     list.appendChild(newList);
     }
-    console.log(this.cookieSalesArr)
     
+    //Adds totals to table
     var total = 0;
-    for( i = 0; i < 15; i++ ) {
+    for( i = 0; i < 15; i++ ) {//Summates all cookies sold a day by store
         total = total + this.cookieSalesArr[i];
     }
-    sumOfAllTotals += total;
+    var list = document.getElementById(this.listID)
+    var newList = document.createElement('td');
+    newList.innerHTML = ( total );
+    list.appendChild(newList);
 
-     var list = document.getElementById(this.listID)
-     var newList = document.createElement('td');
-     newList.innerHTML = ( total );
-     list.appendChild(newList);
+    sumOfAllTotals += total;//Calculates sum of all cookies sold for all stores (used in totalTotal func)
 
-     //Staff table
-
-     var row = document.getElementById('stores2');
+    //Creates Staff table
+    var row = document.getElementById('stores2');
     var newRow = document.createElement('tr');
     newRow.setAttribute('id', this.avgCookie);
     newRow.innerHTML = this.name
     row.appendChild(newRow);
 
     
-        for( i = 0; i < 15; i++ ) {
+        for( i = 0; i < 15; i++ ) {//Adds staff required for each hour to staff table
     var list = document.getElementById(this.avgCookie)
     var newList = document.createElement('td');
     newList.innerHTML = (this.staff[i] )
     list.appendChild(newList);
     }
     var total = 0;
-    for( i = 0; i < 15; i++ ) {
+    for( i = 0; i < 15; i++ ) {//Calcultes total number of staff needed for each store per day
         total = total + this.staff[i];
     }
-
-
-
-     var list = document.getElementById(this.avgCookie);
-     var newList = document.createElement('td');
-     newList.innerHTML = ( total );
-     list.appendChild(newList);
+    var list = document.getElementById(this.avgCookie);
+    var newList = document.createElement('td');
+    newList.innerHTML = ( total );
+    list.appendChild(newList);
 }
 
- function totalTotal(){ //Creates and populates total row 
-     
-     
+function totalTotal(){ //Creates and populates total row 
         for (var j = 0; j < 15; j++ ){
             var count = 0;
             for(var i = 0; i < storz.length; i++ ){
-
                 count += storz[i].cookieSalesArr[j];
-                
-            }
+                }
             salesByHour.push(count);
-        
         }
          var row = document.getElementById('stores');
          var newRow = document.createElement('tr');
          newRow.setAttribute('id', 'total');
          newRow.innerText = 'total'
          row.appendChild(newRow);
+         
          for( i = 0; i < 15; i++ ) {
          var list = document.getElementById('total')
          var newList = document.createElement('td');
