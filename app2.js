@@ -127,22 +127,20 @@ var stJohns = new Store ('St. Johns', 20, 38, 2.3, 'stJohnscookie');
 var waterFront = new Store ('Waterfront', 2, 16, 4.6, 'waterfrontcookie');
 
 
-
-
 totalTotal();
+
+
 console.log(storz);
 
 var submit = document.getElementById('makestore');
 
 submit.addEventListener("submit", function(){
 event.preventDefault();
-// var name = document.getElementById('name');
-// var max = document.getElementById('max');
-// var min = document.getElementById('min');
-// var avg = document.getElementById('avg');
-
-    var New = new Store (this.name.value, this.min.value, this.max.value, this.avg.value, this.name.value);
+    var parent = document.getElementById('stores');
+    var child = document.getElementById('total');
+    parent.removeChild(child);
+    var New = new Store (this.name.value, parseInt(this.min.value), parseInt(this.max.value), parseInt(this.avg.value), this.name.value);
     console.log(storz);
-    
+    totalTotal();
 });
 console.log(storz);
