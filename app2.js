@@ -96,20 +96,20 @@ function totalTotal(){ //Creates and populates total row
         for (var j = 0; j < 15; j++ ){
             var count = 0;
             for(var i = 0; i < storz.length; i++ ){
-                count += storz[i].cookieSalesArr[j];
+                count += storz[i].cookieSalesArr[j]; 
                 }
             salesByHour.push(count);
         }
          var row = document.getElementById('stores');
          var newRow = document.createElement('tr');
          newRow.setAttribute('id', 'total');
-         newRow.innerText = 'total'
+         newRow.innerText = 'Total';
          row.appendChild(newRow);
          
          for( i = 0; i < 15; i++ ) {
          var list = document.getElementById('total')
          var newList = document.createElement('td');
-         newList.innerHTML = (salesByHour[i])
+         newList.innerText = (salesByHour[i])
          list.appendChild(newList);
     }
         var list = document.getElementById('total')
@@ -124,8 +124,7 @@ var pdxAirport = new Store('PDX Airport', 23, 65, 6.3, 'pdxcookie');
 var pioneerSquare = new Store('Pioneer Square', 3, 24, 1.2, 'pioneercookie');
 var powells = new Store ('Powells', 11, 38, 3.7, 'powellscookie');
 var stJohns = new Store ('St. Johns', 20, 38, 2.3, 'stJohnscookie');
-var waterFront = new Store ('Waterfront', 2, 16, 4.6, 'waterfrontcookie');   
-
+var waterFront = new Store ('Waterfront', 2, 16, 4.6, 'waterfrontcookie');
 
 
 
