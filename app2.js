@@ -129,19 +129,20 @@ var waterFront = new Store ('Waterfront', 2, 16, 4.6, 'waterfrontcookie');
 
 
 
-//totalTotal();
+totalTotal();
 console.log(storz);
 
-var submit = document.getElementById('submit');
-var name = document.getElementById('name');
-var max = document.getElementById('max');
-var min = document.getElementById('min');
-var avg = document.getElementById('avg');
+var submit = document.getElementById('makestore');
 
-submit.addEventListener("click", createStore);
+submit.addEventListener("submit", function(){
+event.preventDefault();
+// var name = document.getElementById('name');
+// var max = document.getElementById('max');
+// var min = document.getElementById('min');
+// var avg = document.getElementById('avg');
 
-function createStore() {
-    var New = new Store (name.value, min.value, max.value, avg.value, name.value);
+    var New = new Store (this.name.value, this.min.value, this.max.value, this.avg.value, this.name.value);
     console.log(storz);
     
-}
+});
+console.log(storz);
