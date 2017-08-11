@@ -129,5 +129,19 @@ var waterFront = new Store ('Waterfront', 2, 16, 4.6, 'waterfrontcookie');
 
 
 
-totalTotal();
+//totalTotal();
 console.log(storz);
+
+var submit = document.getElementById('submit');
+var name = document.getElementById('name');
+var max = document.getElementById('max');
+var min = document.getElementById('min');
+var avg = document.getElementById('avg');
+
+submit.addEventListener("click", createStore);
+
+function createStore() {
+    var New = new Store (name.value, min.value, max.value, avg.value, name.value);
+    console.log(storz);
+    
+}
