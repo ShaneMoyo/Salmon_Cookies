@@ -58,6 +58,35 @@
     <tbody id='stores2'>
     </tbody>
     </table>
+    <p>
+        <form id="makestore">
+        <fieldset>
+        <legend>Create store</legend>
+        <label>Store Name:</label>
+        <input id="name" type="text">
+        <label>Maximum Customers:</label>
+        <input type="number" id="max">
+        <label>Minimum Customers:</label>
+        <input type="number" id="min">
+        <label>Avg. Cookies:</label>
+        <input type="number" id="avg">
+        <input type="submit" id="submit">
+        </fieldset>
+        </form>
+<form id="ch.Store">
+  <fieldset>
+      <legend>Change Store</legend>
+  <input type="submit">
+</form>
+<br>
+<select id="change-stores" form="ch.Store">
+  <option value="PDX Airport">PDX Airport</option>
+  <option value="Pioneer Square">Pioneer Square</option>
+  <option value="Powells">Powells</option>
+  <option value="St.Johns">St.Johns</option>
+  <option value="Waterfront">Waterfront</option>
+</select>
+    </p>
 
     <link href='style.css' rel='stylesheet' type='text/css'>
     <script src="app2.js"></script>
