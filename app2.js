@@ -15,6 +15,7 @@ var Store = function(name, min, max, avgCookie, listID,) {
     this.listID = listID;
     this.addToDom();
     this.pushArr();
+    this.index = cookieIndex
     cookieIndex += -1;
 };
 Store.prototype.pushArr = function(){
@@ -147,14 +148,19 @@ var New = new Store (this.name.value,
 totalTotal();
 submit.reset();
 
-var changeStore = document.getElementById("change-stores");
-var newchangeStore = document.createElement('option');
-newchangeStore.setAttribute('value', this.name.value )
-changeStore.appendChild(newchangeStore);
-newchangeStore.innerText = New.name
-console.log(New.name)
-
+// var changeStore = document.getElementById("change-stores");
+// var newchangeStore = document.createElement('option');
+// newchangeStore.setAttribute('value', this.name.value );
+// changeStore.appendChild(newchangeStore);
+// newchangeStore.innerText = New.name
+// console.log(New.name);
 });
+
+// changeStore.addEventListener("submit", function(){//Replaces existing store with new store properties. 
+//     var parent = document.getElementById('stores');
+//     var child = document.getElementById(this.index);//store id 
+
+//}
 
 // var change = document.getElementById('ch.Store');
 // change.addEventListener("submit", function(){

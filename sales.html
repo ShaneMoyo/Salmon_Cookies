@@ -1,0 +1,100 @@
+<!D0CTYPE html>
+<html>
+<head>
+    <title>Salmon cookies</title>
+</head>
+<body>
+    <img src="salmon.png">
+    <div>
+    <h1>Salmon Cookie Data</h1>
+    </div>
+    <table>
+      <thead>
+      <tr>
+          <th>Cookie Sales</th>
+          <th>6:00 A.M.</th>
+          <th>7:00 A.M.</th>
+          <th>8:00 A.M.</th>
+          <th>9:00 A.M.</th>
+          <th>10:00 A.M.</th>
+          <th>11:00 A.M.</th>
+          <th>12:00 P.M.</th>
+          <th>1:00 P.M.</th>
+          <th>2:00 P.M.</th>
+          <th>3:00 P.M.</th>
+          <th>4:00 P.M.</th>
+          <th>5:00 P.M.</th>
+          <th>6:00 P.M.</th>
+          <th>7:00 P.M.</th>
+          <th>8:00 P.M.</th>
+          <th>Total</th>
+      </tr>
+      </thead>
+    <tbody id='stores'>
+    </tbody>
+    </table>
+    <table>
+      <thead>
+      <tr>
+          <th>Staff Needed</th>
+          <th>6:00 A.M.</th>
+          <th>7:00 A.M.</th>
+          <th>8:00 A.M.</th>
+          <th>9:00 A.M.</th>
+          <th>10:00 A.M.</th>
+          <th>11:00 A.M.</th>
+          <th>12:00 P.M.</th>
+          <th>1:00 P.M.</th>
+          <th>2:00 P.M.</th>
+          <th>3:00 P.M.</th>
+          <th>4:00 P.M.</th>
+          <th>5:00 P.M.</th>
+          <th>6:00 P.M.</th>
+          <th>7:00 P.M.</th>
+          <th>8:00 P.M.</th>
+          <th>Total</th>
+      </tr>
+      </thead>
+    <tbody id='stores2'>
+    </tbody>
+    </table>
+    <p>
+        <form id="makestore">
+        <fieldset>
+        <legend>Create store</legend>
+        <label>Store Name:</label>
+        <input id="name" type="text">
+        <label>Maximum Customers:</label>
+        <input type="number" id="max">
+        <label>Minimum Customers:</label>
+        <input type="number" id="min">
+        <label>Avg. Cookies:</label>
+        <input type="number" id="avg">
+        <input type="submit" id="submit">
+        </fieldset>
+        </form>
+<form id="ch.Store">
+  <fieldset>
+      <legend>Change Store</legend>
+      <label>Maximum Customers:</label>
+        <input type="number" id="cMax">
+        <label>Minimum Customers:</label>
+        <input type="number" id="cMin">
+        <label>Avg. Cookies:</label>
+        <input type="number" id="cAvg">
+  <input type="submit">
+</form>
+<br>
+<select id="change-stores" form="ch.Store">
+  <option value="PDX Airport">PDX Airport</option>
+  <option value="Pioneer Square">Pioneer Square</option>
+  <option value="Powells">Powells</option>
+  <option value="St.Johns">St.Johns</option>
+  <option value="Waterfront">Waterfront</option>
+</select>
+    </p>
+
+    <link href='style.css' rel='stylesheet' type='text/css'>
+    <script src="app2.js"></script>
+</body>
+</html>
