@@ -1,94 +1,61 @@
-<!D0CTYPE html>
+<!DOCTYPE html>
 <html>
-<head>
-    <title>Salmon cookies</title>
-</head>
-<body>
-    <img src="salmon.png">
-    <div>
-    <h1>Salmon Cookie Data</h1>
-    </div>
-    <table>
-      <thead>
-      <tr>
-          <th>Cookie Sales</th>
-          <th>6:00 A.M.</th>
-          <th>7:00 A.M.</th>
-          <th>8:00 A.M.</th>
-          <th>9:00 A.M.</th>
-          <th>10:00 A.M.</th>
-          <th>11:00 A.M.</th>
-          <th>12:00 P.M.</th>
-          <th>1:00 P.M.</th>
-          <th>2:00 P.M.</th>
-          <th>3:00 P.M.</th>
-          <th>4:00 P.M.</th>
-          <th>5:00 P.M.</th>
-          <th>6:00 P.M.</th>
-          <th>7:00 P.M.</th>
-          <th>8:00 P.M.</th>
-          <th>Total</th>
-      </tr>
-      </thead>
-    <tbody id='stores'>
-    </tbody>
-    </table>
-    <table>
-      <thead>
-      <tr>
-          <th>Staff Needed</th>
-          <th>6:00 A.M.</th>
-          <th>7:00 A.M.</th>
-          <th>8:00 A.M.</th>
-          <th>9:00 A.M.</th>
-          <th>10:00 A.M.</th>
-          <th>11:00 A.M.</th>
-          <th>12:00 P.M.</th>
-          <th>1:00 P.M.</th>
-          <th>2:00 P.M.</th>
-          <th>3:00 P.M.</th>
-          <th>4:00 P.M.</th>
-          <th>5:00 P.M.</th>
-          <th>6:00 P.M.</th>
-          <th>7:00 P.M.</th>
-          <th>8:00 P.M.</th>
-          <th>Total</th>
-      </tr>
-      </thead>
-    <tbody id='stores2'>
-    </tbody>
-    </table>
-    <p>
-        <form id="makestore">
-        <fieldset>
-        <legend>Create store</legend>
-        <label>Store Name:</label>
-        <input id="name" type="text">
-        <label>Maximum Customers:</label>
-        <input type="number" id="max">
-        <label>Minimum Customers:</label>
-        <input type="number" id="min">
-        <label>Avg. Cookies:</label>
-        <input type="number" id="avg">
-        <input type="submit" id="submit">
-        </fieldset>
-        </form>
-<form id="ch.Store">
-  <fieldset>
-      <legend>Change Store</legend>
-  <input type="submit">
-</form>
-<br>
-<select id="change-stores" form="ch.Store">
-  <option value="PDX Airport">PDX Airport</option>
-  <option value="Pioneer Square">Pioneer Square</option>
-  <option value="Powells">Powells</option>
-  <option value="St.Johns">St.Johns</option>
-  <option value="Waterfront">Waterfront</option>
-</select>
-    </p>
-
-    <link href='style.css' rel='stylesheet' type='text/css'>
-    <script src="app2.js"></script>
-</body>
+  <head>
+      <title>Pat's Salmon Cookies!</title>
+  </head>
+  <body>
+      <img src="salmon.png">
+      <h1>Pat's Salmon Cookies</h1>
+      <section>
+          <h3>Locations</h3>
+          <ul>
+              <li>PDX Airport</li>
+                <ul>
+                  <li>Hours: 6:00 A.M. - 8:00 P.M.</li>
+                  <li>Phone: (555) 444 - 3333
+                </ul>
+              <li>Pioneer Square</li>
+                <ul>
+                    <li>Hours: 6:00 A.M. - 8:00 P.M.</li>
+                    <li>Phone: (522) 422 - 3434
+                </ul>
+              <li>Waterfront</li>
+              <ul>
+                    <li>Hours: 6:00 A.M. - 8:00 P.M.</li>
+                    <li>Phone: (604) 321 - 5555
+                </ul>
+              <li>Powell's</li>
+              <ul>
+                    <li>Hours: 6:00 A.M. - 8:00 P.M.</li>
+                    <li>Phone: (505) 414 - 3223
+                </ul>
+              <li>St. Johns</li>
+              <ul>
+                    <li>Hours: 6:00 A.M. - 8:00 P.M.</li>
+                    <li>Phone: (545) 114 - 9999
+                </ul>
+          </ul>
+        <img src="cutter.jpeg" margin="auto" style="width:60%;height:30%;">
+            
+      </section>
+      <div id="info">
+          <h3>About Us</h3>
+          <p>Pat from Seattle combined two signature Seattle icons, salmon and coffee to create
+             coffee-time confection called Salmon Cookies! The cookies are made into the shape of a salmon, and are actually made with salmon.
+             They are the ideal match for a steaming cup of coffee on a PNW morning. Or PNW afternoon... whatever. Fun for the whole family!</p>
+             <img src="family.jpg"  style="width:60%;height:30%;" >
+             <img src="fish.jpg" style="width:30%;">
+      </div>
+      <div id="merch">
+          <h3>Click here for Salmon Cookie merchandise</h3>
+          <img src="shirt.jpg" style="width:20%;" >
+          
+          <img src="frosted-cookie.jpg" style="width:20%;" >
+      <div>
+      
+        <div id="picture">
+          <img src="chinook.jpg">
+      </div>
+  </body>
+<link href='style2.css' rel='stylesheet' type='text/css'>
 </html>
