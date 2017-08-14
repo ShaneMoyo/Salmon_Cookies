@@ -6,7 +6,7 @@ table, th, td {
    
 }
 
-#info, #picture {
+#info {
     
     margin: 30px 30px 30px 400px;
     width: 600px;
@@ -19,6 +19,20 @@ table, th, td {
     color: lightblue;
     border-radius: 50px;
     
+}
+
+#merchgit {
+    display: block;
+    margin: 30px 30px 30px 400px;
+    width: 600px;
+    padding: 0px 5px 0px 5px;
+    border: 3px solid lightblue;
+    background-color: white;
+    font-size: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    color: lightblue;
+    border-radius: 50px;
 }
 h1{ 
     margin: 5px auto;
@@ -47,6 +61,7 @@ section {
     border-radius: 25px;
 
 }
+
 img {
     border-radius: 30px;
     display: block;
